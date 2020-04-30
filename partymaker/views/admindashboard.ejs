@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Party Maker Admin Dashboard
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <!-- CSS Files -->
+    <link href="../admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/admin.css" rel="stylesheet">
+    <link href="../admin/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../admin/demo/demo.css" rel="stylesheet" />
+
+</head>
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="white" data-active-color="danger">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+
+                <a href="/admindashboard" class="simple-text logo-normal">
+                    PartyMaker
+                    <!-- <div class="logo-image-big">
+            <img src="../admin/img/logo-big.png">
+          </div> -->
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active dashboard">
+                        <a href="#">
+                            <i class="nc-icon nc-bank"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    
+                    <li class="active show">
+                        <a href="#">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Add Event</p>
+                        </a>
+                    </li>
+
+                    <li class="active bookingbtn">
+                        <a href="#">
+                            <i class="nc-icon nc-spaceship"></i>
+                            <p>Booking</p>
+                        </a>
+                    </li>
+
+                    <li class="artist active">
+                        <a href="#">
+                            <i class="nc-icon nc-diamond"></i>
+                            <p>Add Artist</p>   
+                        </a>
+                    </li>
+
+                    <!-- <li class="bookingdetail active">
+                        <a href="#">
+                            <i class="nc-icon nc-bell-55"></i>
+                            <p>Booking Detail</p>
+                        </a>
+                    </li> -->
+
+                    <li class="active execulive">
+                        <a href="#">
+                            <i class="nc-icon nc-tile-56"></i>
+                            <p>Executive</p>
+                        </a>
+                    </li>
+
+                    <li class="gst active">
+                        <a href="#">
+                            <i class="nc-icon nc-tile-56"></i>
+                            <p>GST</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#pablo">PartyMaker Dashboard</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <form>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="nc-icon nc-zoom-split"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item btn-rotate dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com"
+                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="nc-icon nc-bell-55"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Some Actions</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">All Booking</a>
+                                    <a class="dropdown-item" href="#">Pending Booking</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <!-- <div class="panel-header panel-header-lg">
+
+  <canvas id="bigDashboardChart"></canvas>
+
+
+</div> -->
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats" style="font-size: 13px;">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="nc-icon nc-globe text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-category">Total Booking</p>
+                                            <p class="card-title"><%= result[0][0].total %>
+                                                <p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="nc-icon nc-money-coins text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-category">Total Billing</p>
+                                            <p class="card-title">-
+                                                <p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="nc-icon nc-vector text-danger"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-category">Active Booking</p>
+                                            <p class="card-title"><%= result[6][0]. activebook %>
+                                                <p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        <div class="icon-big text-center icon-warning">
+                                            <i class="nc-icon nc-favourite-28 text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+                                            <p class="card-category">Pending Booking</p>
+                                            <p class="card-title"><%= result[0][0]. total %>
+                                                <p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <h1>Top 4 Bookings</h1>
+                <div class="container">
+                    <div class="row">
+                    <% for(i=0;i<result[1].length;i++){ %>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats" style="font-size: 13px;">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="numbers">
+
+                                                <p class="name"><%= result[1][i].fname %></p>
+                                                <p class="date"><%= result[1][i]. datetime %></p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+                </div>
+
+                    <h1>All Booking</h1>
+                    <div class="con">
+                        <div class="row">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card card-stats" style="font-size: 13px; margin-left: -2%; margin-top: -1%;">
+                                    <div class="card-body ">
+                    <ul class="bkngcrdmain">
+                    <li class="bkngcrd1">Name</li>
+                    <li class="bkngcrd2">Email</li>
+                    <li class="bkngcrd3">Mobile Number</li>
+                    <li class="bkngcrd4">Date Time</li>
+                    <li class="bkngcrd5">Address</li>
+                    <li class="bkngcrd6">Event Name</li>
+                    </ul>
+                    </div>
+                    <div class="card-footer ">
+
+
+                    </div>
+                    </div>
+                    </div>
+
+
+                    </div>
+                    </div>
+
+                   <div class="con">
+                            <div class="row">
+
+
+
+  
+
+                                <% for(i=0;i<result[2].length;i++){ %>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card card-stats" style="font-size: 13px; margin-left: -2%; margin-top: -1%;">
+                                        <a class="showdata" href="/ShowBooking?id=<%= result[2][i].id %>">
+                                        <div class="card-body ">
+                                            <ul class="bkngcrdmain">
+                                                <li class="bkngcrd1"> <%= result[2][i]. fname %> </li>
+                                                <li class="bkngcrd2"> <%= result[2][i]. email %> </li>
+                                                <li class="bkngcrd3"> <%= result[2][i]. mobile %> </li>
+                                                <li class="bkngcrd4"> <%= result[2][i]. datetime %> </li>
+                                                <li class="bkngcrd5"> <%= result[2][i]. location %> </li>
+                                                <li class="bkngcrd6"> <%= result[2][i]. eventname %> </li>
+
+                                            </ul>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% } %>
+
+                            </div>
+                        </div>
+               <!--content-->
+            </div>
+                <div class="artistdiv">
+                        <h1>All Artist</h1>
+                        <div class="con">
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card card-stats" style="font-size: 13px; margin-left: -8%; margin-top: -1%;">
+                                        <div class="card-body ">
+                                            <ul class="bkngcrdmain">
+                                                <li class="bkngcrd1">Name</li>
+                                                <li class="bkngcrd2">Mobile Number</li>
+                                                <li class="bkngcrd3">Email</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer ">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    <div class="con">
+                        <div class="row">
+                            <% for(i=0;i<result[5].length;i++){ %>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card card-stats" style="font-size: 13px; margin-left: -8%;">
+                                    <div class="card-body ">
+                                        <!-- <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                                <%= result[5][i]. artistname %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -35%;">
+                                                <%= result[5][i]. artistnumber %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -4%;">
+                                                <%= result[5][i]. artistemail %>
+                                            </div>
+
+
+                                        </div> -->
+                                        <ul class="bkngcrdmain">
+                                            <li class="bkngcrd1"> <%= result[5][i]. artistname %> </li>
+                                            <li class="bkngcrd2"> <%= result[5][i]. artistnumber %> </li>
+                                            <li class="bkngcrd3"> <%= result[5][i]. artistemail %> </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer ">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+
+                        </div>
+                    </div>
+                    <form action="/admindashboard/addartist" method="POST">
+                    <input type="text" class="form-control col-md-4" name="artistname" placeholder="Enter Artist Name"><br>
+                    <input type="text" class="form-control col-md-4" name="artistnumber" placeholder="Enter Artist Mobile Number"><br>
+                    <input type="email" class="form-control col-md-4" name="artistemail" placeholder="Enter Artist Email">
+                    <input type="submit" value="ADD" class="btn btn-success">
+                    </form>
+
+
+                </div>
+
+
+                <div class="result artisttable">
+                </div>
+
+                <div class="bookdetail">
+                    <div class="con">
+                        <div class="row">
+                            <% for(i=0;i<result[3].length;i++){ %>
+                          <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card card-stats" style="font-size: 13px; margin-left: -8%;">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                                <%= result[3][i]. bid %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -35%;">
+                                                <%= result[3][i]. shopname %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -4%;">
+                                                <%= result[3][i]. bookedby %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -12%;">
+                                                <%= result[3][i]. email %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -7%;">
+                                                <%= result[3][i]. phoneno %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -7%;">
+                                                <%= result[3][i]. event %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -11%;">
+                                                Rs <%= result[3][i]. price %>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% } %>
+
+                        </div>
+                    </div>
+                    <form action="/admindashboard/insert" method="POST">
+                    <input type="number" name="bid" class="form-control col-md-4" placeholder="Enter Bill Number"><br>
+                    <input type="text" name="storename" class="form-control col-md-4" placeholder="Enter Store Name"><br>
+                    <input type="text" name="bookedby" class="form-control col-md-4" placeholder="Enter Booked By"><br>
+                    <input type="email" name="email" class="form-control col-md-4" placeholder="Enter Email"><br>
+                    <input type="text" name="phoneno" class="form-control col-md-4" placeholder="Enter Phone Number"><br>
+                    <input type="text" name="event" class="form-control col-md-4" placeholder="Enter Event Name"><br>
+                    <input type="text" name="price" class="form-control col-md-4" placeholder="Enter Price"><br>
+                    <input type="submit" class="btn btn-success" value="Save">
+                    </form>
+                </div>
+
+
+
+
+
+                <div class="execuliveshow">
+                <div class="con">
+                    <div class="row">
+                        <% for(i=0;i<result[4].length;i++){ %>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="card card-stats" style="font-size: 13px; margin-left: -8%;">
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                            <%= result[4][i]. membername %>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -35%;">
+                                            <%= result[4][i]. membernumber %>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -4%;">
+                                            <%= result[4][i]. memberemail %>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="card-footer ">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+
+                    </div>
+                </div>
+
+                    <form action="/admindashboard/addmember" method="POST">
+                        <input type="text" class="form-control col-md-4" name="membername" placeholder="Enter  Name"><br>
+                        <input type="text" class="form-control col-md-4" name="membernumber" placeholder="Enter  Mobile Number"><br>
+                        <input type="email" class="form-control col-md-4" name="memberemail" placeholder="Enter  Email">
+                        <input type="submit" value="ADD" class="btn btn-success">
+                    </form>
+
+
+
+                </div>
+
+
+                <div class="gstarea">
+                    <h1>Generate Invoice</h1>
+                    <form action="/admindashboard/gstcalculate" method="POST">
+                            <input type="number" name="igst" class="form-control col-md-4" placeholder="Enter IGST"><br>
+                            <input type="number" name="cgst" class="form-control col-md-4" placeholder="Enter CGST"><br>
+                            <input type="number" name="sgst" class="form-control col-md-4" placeholder="Enter SGST"><br>
+
+                            <input type="submit" class="btn btn-success" value="Add">
+                    </form>
+                </div>
+
+
+
+
+                <div class="bookingarea resultbookingshow">
+                    <div class="con">
+                        <div class="row">
+                            <% for(i=0;i<result[2].length;i++){ %>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card card-stats" style="font-size: 13px; margin-left: -8%;" >
+                                    <div class="card-body ">
+                                           <div class="row">
+                                               <div class="col-lg-3 col-md-3 col-sm-3" >
+                                                <%= result[2][i]. fname %>
+                                               </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -15%;">
+                                                <%= result[2][i]. email %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -4%;">
+                                                <%= result[2][i]. mobile %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -12%;">
+                                                <%= result[2][i]. datetime %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -12%;">
+                                                <%= result[2][i]. address %>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3" style="margin-left: -12%;">
+                                                <%= result[2][i]. eventname %>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer ">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                                <% } %>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="showadd">
+                        <form action="/admindashboard/showadd" method="POST">
+                                <input type="text" name="eventname" class="form-control col-md-4" placeholder="Enter Event">
+                                <input type="submit" value="Add" class="btn btn-success">
+                        </form>
+                </div>
+
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+
+    <script src="../admin/js/core/popper.min.js"></script>
+    <script src="../admin/js/core/bootstrap.min.js"></script>
+    <script src="../admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="../admin/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../admin/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../admin/demo/demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in admin/admin-for-demo/js/demo.js
+            demo.initChartsPages();
+        });
+    </script>
+
+    <script>
+
+        a()
+        function a() {
+            $.getJSON('/admindashboard/all', (data) => {
+
+                maketable(data)
+            })
+        }
+        function maketable(data) {
+
+            let table = `   <table id="bootstrap-data-table-export" class="table table-bordered table-">
+                       <thead>
+                                    <h1>Show All Artist</h1>
+                                                    <tr>
+
+                                                        <th>Name</th>
+                                                        <th>Number</th>
+                                                        <th>Comment</th>
+
+
+                                                    </tr>
+                                                </thead>`
+            $.each(data, function (i, item) {
+                table += `    <tbody>
+
+                                                    <tr>
+
+
+                                                        <td>${item.artistname}</td>
+                                                        <td>${item.artistnumber}</td>
+                                                        <td>${item.artistemail}</td>
+
+
+
+                                                    </tr>
+                                                </tbody>`
+            })
+            table += `   </table>`
+
+            $('.result').html(table)
+
+
+        }
+
+
+    b()
+    function b() {
+        $.getJSON('/admindashboard/allbookdetail', (data) => {
+
+            maketabledata(data)
+        })
+    }
+    function maketabledata(data) {
+
+        let table = `   <table id="bootstrap-data-table-export" class="table table-bordered table-">
+                       <thead>
+                                    <h1>Show Booking Detail</h1>
+                                                    <tr>
+
+                                                        <th>BID</th>
+                                                        <th>Store Name</th>
+                                                        <th>Booked By</th>
+                                                        <th>Email</th>
+                                                        <th>Mobile Number</th>
+
+
+                                                    </tr>
+                                                </thead>`
+        $.each(data, function (i, item) {
+            table += `    <tbody>
+
+                                                    <tr>
+
+
+                                                        <td>${item.bid}</td>
+                                                        <td>${item.storename}</td>
+                                                        <td>${item.bookedby}</td>
+                                                        <td>${item.email}</td>
+                                                        <td>${item.phoneno}</td>
+
+
+
+                                                    </tr>
+                                                </tbody>`
+        })
+        table += `   </table>`
+
+        $('.resultbook').html(table)
+    }
+
+
+
+        c()
+        function c() {
+            $.getJSON('/admindashboard/allexclusive', (data) => {
+
+                maketabledataexe(data)
+            })
+        }
+        function maketabledataexe(data) {
+
+            let table = `   <table id="bootstrap-data-table-export" class="table table-bordered table-">
+                       <thead>
+                                    <h1>Show Executive</h1>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Mobile Number</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>`
+            $.each(data, function (i, item) {
+                table += `    <tbody>
+
+                                                    <tr>
+                                                        <td>${item.membername}</td>
+                                                        <td>${item.membernumber}</td>
+                                                        <td>${item.memberemail}</td>
+                                                    </tr>
+                                                </tbody>`
+            })
+            table += `   </table>`
+
+            $('.resultexe').html(table)
+
+
+        }
+
+
+        //   d()
+        //     function d() {
+        //         $.getJSON('/admindashboard/booking', (data) => {
+
+        //             maketablebooking(data)
+        //         })
+        //     }
+        //     function maketablebooking(data) {
+
+        //         let table = `   <table id="bootstrap-data-table-export" class="table table-bordered table-">
+        //                <thead>
+        //                             <h1>Show Booking</h1>
+        //                                             <tr>
+        //                                                 <th>Name</th>
+        //                                                 <th>Email</th>
+        //                                                 <th>Mobile</th>
+        //                                                 <th>Date</th>
+        //                                                 <th>Time</th>
+        //                                                 <th>Address</th>
+        //                                                 <th>Event</th>
+        //                                             </tr>
+        //                                         </thead>`
+        //         $.each(data, function (i, item) {
+        //             table += `    <tbody>
+
+        //                                             <tr>
+        //                                                 <td>${item.fname}</td>
+        //                                                 <td>${item.email}</td>
+        //                                                 <td>${item.mobile}</td>
+        //                                                 <td>${item.showdate}</td>
+        //                                                 <td>${item.showtime}</td>
+        //                                                 <td>${item.address}</td>
+        //                                                 <td>${item.eventname}</td>
+        //                                             </tr>
+        //                                         </tbody>`
+        //         })
+        //         table += `   </table>`
+
+        //         $('.resultbookingshow').html(table)
+
+
+        //     }
+
+</script>
+</body>
+
+</html>

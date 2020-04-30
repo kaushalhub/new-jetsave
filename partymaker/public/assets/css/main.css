@@ -1,0 +1,71 @@
+.bootom {
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 65px;
+	position: fixed;
+	background-color: #3AACE8;
+
+}
+
+.bootom ul li {
+	display: inline;
+	padding: 20px;
+}
+
+.logo {
+	float: left;
+}
+
+li {
+	float: right;
+}
+
+.bootom li a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	color: white;
+	font-family: 'Satisfy', cursive;
+	font-size: 25px;
+}
+
+/* .showdetail{
+                                margin-top :10% ;
+                            } */
+.message {
+	margin: 21%;
+	margin-left: 35%;
+}
+
+.message h3 {
+	font-family: 'Satisfy', cursive;
+}
+
+.button {
+	margin-left: 20%;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #1F5AB0;
+	border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #1F5AB0;
+}

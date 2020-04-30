@@ -1,0 +1,51 @@
+<div id="main"></div>
+
+<div id="printIt"></div>
+<script>
+let pricesList = {};
+
+pricesList["all"] = 200;
+pricesList["js-frameworks"] = 100;
+pricesList["js-libs"] = 100;
+pricesList["express"] = 100;
+pricesList["node"] = 100;
+pricesList["build-tools"] = 100;
+pricesList["npm"] = 100;
+
+const main = document.getElementById('main');
+const printIt = document.getElementById('printIt');
+
+for (item in pricesList) {
+  let box = '<div><input type="checkbox" id='+item+' name="'+pricesList[item]+'"/>'+
+  '<label for="'+item+'">'+item+'  - price: $'+pricesList[item]+'</label></div>'
+  main.innerHTML = main.innerHTML + box;
+}
+
+const activityCheckBoxes =     document.querySelectorAll("input[type=checkbox]");
+
+function getActivityPrices(userInput) {
+  // selected all checkBoxes
+  let total = 0;
+  // Loop through checkbox list
+  for (let i = 0; i < activityCheckBoxes.length; i++) {
+    if (activityCheckBoxes[i].checked) {
+      userInput = parseInt(activityCheckBoxes[i].name);
+      total = (total+userInput);
+    }
+  }
+  return total
+}
+
+function calculateTotal() {
+  let total = getActivityPrices();
+  console.log(total);
+  printIt.innerHTML = `Your Total is $${total}`;
+  printIt.style.display = "block";
+}
+
+for (var i = 0; i < activityCheckBoxes.length; i++) {
+  activityCheckBoxes[i].addEventListener('change',function(){
+      calculateTotal();
+  });
+}
+</script>
